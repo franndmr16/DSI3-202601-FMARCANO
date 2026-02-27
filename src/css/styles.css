@@ -69,3 +69,51 @@ body {
 .header__button:hover {
   background-color: #8C4A35;
 }
+
+/* ------------------------------
+   Hero
+------------------------------ */
+.hero {
+  text-align: center;
+  padding: var(--spacing-section);
+}
+
+.hero__image {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ------------------------------
+   Bebidas destacadas
+------------------------------ */
+.featured {
+  background-color: #731B02;
+  text-align: center;
+  padding: var(--spacing-section);
+}
+
+.featured__title {
+  color: var(--color-principal);
+  margin-bottom: var(--spacing-element);
+}
+
+.featured__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-section);
+  flex-wrap: wrap;
+}
+
+.featured__item {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  transition: transform 0.3s;
+}
+
+.featured__item:hover {
+  transform: scale(1.05);
+}
+
