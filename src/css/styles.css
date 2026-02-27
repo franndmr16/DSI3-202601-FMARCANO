@@ -26,3 +26,46 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+.header {
+  background-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-element) var(--spacing-section);
+}
+
+.header__logo {
+  font-size: 2rem;
+}
+
+.header__list {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-element);
+}
+
+.header__link {
+  color: var(--color-texto-oscuro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.header__link:hover {
+  color: #FFD9C2;
+}
+
+.header__button {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header__button:hover {
+  background-color: #8C4A35;
+}
