@@ -1,0 +1,28 @@
+:root {
+  --color-principal: #731B02;
+  --color-secundario: #542B1F;
+  --color-texto-oscuro: #000000;
+  --color-texto-claro: #FFFFFF;
+  --font-base: 'Konkhmer Sleokchher', sans-serif;
+  --spacing-section: 2rem;
+  --spacing-element: 1rem;
+  --radius: 8px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-principal);
+  color: var(--color-texto-oscuro);
+  line-height: 1.5;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
