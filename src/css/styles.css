@@ -81,7 +81,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: var(--spacing-section);
+  padding: var(--spacing-section); 
 }
 
 .hero__image {
@@ -93,14 +93,13 @@ body {
 .featured {
   background-color: #731B02;
   text-align: center;
-  padding: var(--spacing-section);
 }
 
 .featured__title {
   display: inline-block;
   background-color: var(--color-secundario);
   color: var(--color-texto-claro);
-  padding: 0.8rem 30rem; /* ↑ más grande a los costados */
+  padding: 0.8rem 28rem; 
   border-radius: var(--radius);
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -164,5 +163,39 @@ body {
 .promo__button {
   background-color: #542B1F;
 }
+
+.footer {
+  background-color: var(--color-secundario);
+  color: var(--color-texto-claro);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-section);
+  padding: var(--spacing-section);
+}
+
+.footer__title {
+  margin-bottom: 0.5rem;
+}
+
+.footer__description {
+  max-width: 400px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__link {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: #FFD9C2;
+}
+
 
 
