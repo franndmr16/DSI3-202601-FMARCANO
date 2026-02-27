@@ -110,12 +110,20 @@ body {
   justify-content: center;
   gap: var(--spacing-section);
   flex-wrap: wrap;
+
+  background-image: url("../img/imagenFondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 1rem;    
+  border-radius: var(--radius);
 }
 
 .featured__item {
-  background-color: var(--color-secundario);
+  background-color: var(--color-texto-claro);
   color: var(--color-texto-claro);
-  padding: 1rem 2rem;
+  padding: 0.5rem 0.5rem;
   border-radius: var(--radius);
   transition: transform 0.3s;
 }
