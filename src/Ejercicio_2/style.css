@@ -12,3 +12,10 @@ input, select, button {
 #contenedor select {
     margin-right: 10px;
 }
+
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: darkblue;
+}
