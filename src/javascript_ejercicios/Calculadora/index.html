@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Académica - Notas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="academic-container">
+        <header>
+            <h1>Registro de Calificaciones</h1>
+            <p class="subtitle">Universidad El Bosque - Facultad de Ingeniería</p>
+        </header>
+
+        <section class="setup-panel">
+            <label for="numNotas">Número de notas:</label>
+            <div class="input-group">
+                <input type="number" id="numNotas" min="1" max="15" placeholder="Ej: 5">
+                <button onclick="generarCamposNotas()">Configurar Formulario</button>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <div id="contenedorNotas" class="notas-grid"></div>
+
+        <section id="controlesFinales" class="result-panel" style="display: none;">
+            <button class="btn-primary" onclick="calcularPromedio()">Generar Acta de Notas</button>
+            <div id="cuadroResultado" class="report-card">
+                <p id="textoPromedio"></p>
+                <h2 id="estadoFinal"></h2>
+            </div>
+        </section>
+    </main>
+    <script src="calculadora.js"></script>
+</body>
+</html>
