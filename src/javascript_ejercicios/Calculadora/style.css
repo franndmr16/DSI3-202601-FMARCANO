@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif; 
+    font-family: 'Times New Roman', Times, serif; /* Toque clásico */
     background-color: #e9ecef;
     color: var(--text-dark);
     margin: 0;
@@ -57,7 +57,7 @@ h1 {
 input[type="number"] {
     border: 1px solid var(--border-color);
     padding: 10px;
-    border-radius: 0;
+    border-radius: 0; /* Estilo más rígido/académico */
     flex-grow: 1;
 }
 
