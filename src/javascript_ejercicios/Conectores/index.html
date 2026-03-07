@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio: Conectores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">🔌 Prueba de Conectores</h1>
+        <p style="text-align: center;">🔌 ¿Cuantos casos vas a probar? 🔌</p>
+        
+        <div class="setup">
+            <input type="number" id="numCasos" min="1" max="100" placeholder="N">
+            <button onclick="generarFilas()">Generar Entradas</button>
+        </div>
+
+        <div id="contenedorCasos"></div>
+
+        <div id="controlesFinales" style="display: none; margin-top: 20px;">
+            <button class="btn-calcular" onclick="validarConexiones()">Verificar Compatibilidad</button>
+        </div>
+    </div>
+    <script src="conectores.js"></script>
+</body>
+</html>
