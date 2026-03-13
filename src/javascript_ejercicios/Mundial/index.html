@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Partido Amistoso - Mundial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Partido Amistoso</h1>
+        <p>¿Cuántos casos de prueba quieres ingresar?</p>
+        
+        <div class="setup">
+            <input type="number" id="cantidadCasos" min="1" max="100" placeholder="N (1-100)">
+            <button onclick="generarInputs()">Generar Filas</button>
+        </div>
+
+        <div id="contenedorPartidos"></div>
+
+        <div id="controlesFinales" style="display: none; margin-top: 20px;">
+            <button class="btn-calcular" onclick="procesarResultados()">Calcular Resultados</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
