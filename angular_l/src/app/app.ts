@@ -1,12 +1,23 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, } from '@angular/core';
+import { Game } from './screens/game/game';
+import { Mundial } from './screens/mundial/mundial';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    Game,
+    Mundial
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular_l');
+
+  option: number = 0;
+
+  changeOption(value: number): void{
+    this.option = value
+    console.log(this.option)
+  }
 }
