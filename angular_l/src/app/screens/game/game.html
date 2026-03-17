@@ -3,5 +3,37 @@
     [title]="'¿Quien ganara?'"
     [description]="'Algoritmo que indica quien gano'"
     [label]="'Ingrese la cantidad de partidos'"
-    [actionName]="'Calcular'">
+    [actionName]="'Calcular'"
+    (elements)="generateElements($event)">
 </app-header>
+
+@if(elements < 0 || elements > 100){
+    <p>La opcion ingresada no es valida</p>
+}
+@if (elements > 0){
+    <h4>Cantidad de juegos</h4>
+    <p>Ingrese en cada opción el ganador</p>
+
+    @for (item of options; track $index){
+        <label>{{ $index + 1}}</label>
+        <select [(ngModel)]="options[$index]">
+            <option value="">Seleccione un jugador</option>
+            @for(jugador of jugadores; track $index; let j = $index){
+                <option value="{{jugador}}">{{jugadores}}</option>
+            }
+
+        </select>
+    }
+}
+@else {
+        <p>Se debe primero ingresa la cantidad de juegos</p>
+    }
+
+
+        <!-- @for (item of options; track $index){
+        <select>
+            <option value="">Selecciones</option>
+            <option value="ALICE">ALICE</option>
+            <option value="BOB">BOB</option>
+            <option value="EMPATE">EMPATE</option>
+        </select> -->
