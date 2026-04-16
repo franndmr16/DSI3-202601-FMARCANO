@@ -1,0 +1,9 @@
+<div class="select-field">
+  <label class="select-field__label">{{ label }}</label>
+  <select class="select-field__input">
+    <option value="" disabled selected>{{ placeholder }}</option>
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--color-secundario); 
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer__link {
+  color: white;
+  text-decoration: none;
+}

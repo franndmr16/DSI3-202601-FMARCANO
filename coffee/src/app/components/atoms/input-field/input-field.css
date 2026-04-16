@@ -1,0 +1,20 @@
+.text-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family);
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--color-bg-input);
+}
+
+.text-input:focus {
+  border-color: var(--color-border-focus);
+  background: var(--color-bg-input-focus);
+}
+
+.text-input--error {
+  border-color: var(--color-border-error) !important;
+}
