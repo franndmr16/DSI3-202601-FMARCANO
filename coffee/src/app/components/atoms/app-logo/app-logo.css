@@ -1,0 +1,16 @@
+.logo {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo__letter {
+  color: var(--color-text-white);
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-family);
+}

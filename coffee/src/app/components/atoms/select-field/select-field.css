@@ -1,0 +1,28 @@
+.select-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+.select-field__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-label, #ffd080);
+  margin-bottom: 4px;
+}
+
+.select-field__input {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 2px solid var(--color-border, #334e5a);
+  border-radius: 8px;
+  color: var(--color-text, #e0e0e0);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  outline: none;
+}
+
+.select-field__input:focus {
+  border-color: var(--color-primary, #ffd080);
+}

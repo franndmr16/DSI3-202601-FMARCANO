@@ -1,0 +1,9 @@
+<input
+  class="text-input"
+  [id]="inputId"
+  [type]="type"
+  [placeholder]="placeholder"
+  [value]="value"
+  (input)="valueChange.emit($any($event.target).value)"
+  [class.text-input--error]="hasError"
+/>
