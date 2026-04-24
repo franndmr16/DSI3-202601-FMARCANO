@@ -3,13 +3,16 @@
   <aside class="p-pokemon-page__sidebar">
     <h1 class="sidebar-title">POKEMON DETALLE</h1>
 
-    <div class="m-search-container">
-      <input type="text" 
-             placeholder="Busca por nombre o ID..." 
-             [(ngModel)]="searchTerm" 
-             class="m-search-input">
-      <button class="m-search-button">BUSCAR</button>
-    </div>
+    <div class="m-search-box">
+  <input type="text" 
+         placeholder="Busca por nombre o ID (ej: 25)..." 
+         [(ngModel)]="searchTerm" 
+         (keyup.enter)="searchPokemon()" 
+         class="m-search-box__input">
+  <button (click)="searchPokemon()" class="m-search-box__btn">
+    BUSCAR
+  </button>
+</div>
 
     @if (selectedPokemon) {
       <div class="m-detail-content">
@@ -37,7 +40,12 @@
       </div>
     } @else {
       <div class="m-detail-placeholder">
-        <p>Selecciona un Pokémon para ver su ficha técnica.</p>
+        <div class="m-detail-placeholder__wrapper">
+          <div class="css-pokeball-minimal"></div> 
+          <p class="m-detail-placeholder__text">
+            Selecciona un Pokémon de la galería para ver su ficha técnica.
+          </p>
+        </div>
       </div>
     }
   </aside>

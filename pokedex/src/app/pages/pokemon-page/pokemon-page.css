@@ -20,6 +20,51 @@
   overflow-y: auto;
 }
 
+.m-search-box {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  background: white;
+  border: 2px solid #ffcb05;
+  box-shadow: 0 0 0 1px #3a86ff inset;
+  overflow: hidden;
+  align-items: center;
+}
+
+.m-search-box__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  color: #333;
+  background: transparent;
+  outline: none;
+}
+
+.m-search-box__input::placeholder {
+  color: #a0a0a0; 
+}
+
+.m-search-box__btn {
+  flex: 0 0 auto;
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .sidebar-title {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.2rem;
@@ -147,4 +192,64 @@
   font-weight: 700;
   color: #2d3436;
   font-family: 'Montserrat', sans-serif;
+}
+
+.m-detail-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.m-detail-placeholder__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 250px;
+}
+
+.css-pokeball-minimal {
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border-radius: 50%;
+  position: relative;
+  border: 3px solid #7f8c8d;
+  overflow: hidden;
+  margin-bottom: 5px;
+  opacity: 0.25; 
+}
+
+.css-pokeball-minimal::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #7f8c8d;
+  transform: translateY(-50%); 
+}
+
+.css-pokeball-minimal::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #7f8c8d;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.m-detail-placeholder__text {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  margin: 0;
+  line-height: 1.4;
 }

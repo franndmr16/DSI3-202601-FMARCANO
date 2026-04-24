@@ -14,6 +14,7 @@ import { PokemonCardComponent } from '../../components/molecules/pokemon-card/po
 })
 export class PokemonPage implements OnInit {
   linksPokemon: PokemonDto[] = [];
+  filteredPokemon: PokemonDto[] = [];
   selectedPokemon: PokemonDto | null = null;
   searchTerm: string = ''; 
   offset: number = 0;
@@ -26,18 +27,39 @@ export class PokemonPage implements OnInit {
     this.loadPokemons();
   }
 
- loadPokemons(): void {
-  this.pokemonService.getPokemons(this.offset, this.limit).subscribe({
-    next: (result) => {
-      this.linksPokemon = [...result];
-      setTimeout(() => {
-        this.cdr.markForCheck();
-        this.cdr.detectChanges();
-      }, 0);
-    },
-    error: (err) => console.error('Error:', err)
-  });
-}
+  loadPokemons(): void {
+    this.pokemonService.getPokemons(this.offset, this.limit).subscribe({
+      next: (result) => {
+        this.linksPokemon = [...result];
+        this.filteredPokemon = [...result];
+        this.refreshUI();
+      },
+      error: (err) => console.error('Error:', err)
+    });
+  }
+
+  searchPokemon(): void {
+    const term = this.searchTerm.trim().toLowerCase();
+
+    if (!term) {
+      this.filteredPokemon = [...this.linksPokemon];
+      return;
+    }
+    this.pokemonService.getPokemonDetails(term).subscribe({
+      next: (pokemon) => {
+        if (pokemon) {
+          this.filteredPokemon = [pokemon];
+          this.selectedPokemon = pokemon; 
+          this.refreshUI();
+        }
+      },
+      error: (err) => {
+        console.error('No se encontró el Pokémon:', err);
+        this.filteredPokemon = [];
+        this.refreshUI();
+      }
+    });
+  }
 
   nextPage(): void {
     this.offset += this.limit;
@@ -53,16 +75,14 @@ export class PokemonPage implements OnInit {
     }
   }
 
-  get filteredPokemon() {
-    if (!this.searchTerm) return this.linksPokemon;
-    
-    return this.linksPokemon.filter(p => 
-      p.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
-      p.id.toString() === this.searchTerm
-    );
-  }
-
   selectPokemon(pokemon: PokemonDto): void {
     this.selectedPokemon = pokemon;
+  }
+
+  private refreshUI(): void {
+    setTimeout(() => {
+      this.cdr.markForCheck();
+      this.cdr.detectChanges();
+    }, 0);
   }
 }

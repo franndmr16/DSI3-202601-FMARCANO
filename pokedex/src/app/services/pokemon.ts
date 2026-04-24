@@ -28,4 +28,8 @@ export class PokemonService {
   getPokemon(name: string): Observable<PokemonDto> {
     return this.http.get<PokemonDto>(`${this.BASE_URL}${this.POKEMON_PATH}/${name}`);
   }
+
+  getPokemonDetails(nameOrId: string): Observable<PokemonDto> {
+    return this.http.get<PokemonDto>(`https://pokeapi.co/api/v2/pokemon/${nameOrId}`);
+  }
 }
