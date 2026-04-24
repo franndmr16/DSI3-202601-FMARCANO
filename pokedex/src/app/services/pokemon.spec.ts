@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { PokemonService } from './pokemon';
 
-import { PokemonService } from './pokemon-service';
-
-describe('PokemonService', () => {
+describe('Pokemon', () => {
   let service: PokemonService;
 
   beforeEach(() => {

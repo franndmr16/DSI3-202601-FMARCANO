@@ -1,24 +1,31 @@
-export interface PokemonsDTO{
-    count: Number;
-    next: String;
-    previous: String | null;
-    results: PokemonsListDTO[];
+export interface pokemonsDTO {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: pokemonslistDTO[];
 }
 
-export interface PokemonsListDTO{
-    name: String;
-    url: String;
+export interface pokemonslistDTO {
+    name: string;
+    url: string;
 }
 
-export interface PokemonDetailDTO{
-    name: String;
+export interface PokemonDetailDto {
+    id: number;
+    name: string;
+    types: PokemonDetailListTypeDto[];
+    sprites: PokemonDetailSpritesDto;
 }
-
-export interface PokemonDetailDTOListTypeDTO{
-    slot: number;
+export interface PokemonDetailListTypeDto {
+    slots: number;
+    type: PokemonDetailTypeDto;
 }
+export interface PokemonDetailTypeDto {
+    name: string;
+    url: string;
 
-export interface PokemonDetailTypeDTO{
-    name: String
-    url: String
+}
+export interface PokemonDetailSpritesDto {
+    font_default: string;
+    font_shiny: string;
 }

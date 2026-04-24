@@ -1,0 +1,45 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.pokemon-grid {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  padding: 16px;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+}
+
+.pokemon-card p {
+  text-transform: capitalize;
+  margin: 4px 0;
+}
+.pokemon-types {
+  display: flex;
+  gap: 6px;
+}
+
+.pokemon-types span {
+  font-size: 12px;
+  text-transform: capitalize;
+}
