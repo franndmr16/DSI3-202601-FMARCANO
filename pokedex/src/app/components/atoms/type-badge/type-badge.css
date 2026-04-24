@@ -1,0 +1,19 @@
+.a-type-badge {
+  display: inline-block;
+  width: 80px;   
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.a-type-badge--grass { background-color: #7AC74C; }
+.a-type-badge--poison { background-color: #A33EA1; }
+.a-type-badge--fire { background-color: #EE8130; }
+.a-type-badge--flying { background-color: #A98FF3; }
+.a-type-badge--water { background-color: #6390F0; }
+.a-type-badge--bug { background-color: #A6B91A; }
+.a-type-badge--normal { background-color: #A8A77A; }
+.a-type-badge--electric { background-color: #F7D02C; }

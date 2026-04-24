@@ -1,45 +1,150 @@
-.layout {
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+.p-pokemon-page__container {
   display: flex;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8faff;
 }
 
-.pokemon-grid {
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 16px;
-  padding: 16px;
+.p-pokemon-page__sidebar {
+  width: 280px; 
+  min-width: 280px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eef2f7;
+  padding: 20px;
   overflow-y: auto;
 }
 
-.sidebar {
-  width: 30%;
-  border-right: 1px solid #ccc;
-  padding: 16px;
+.sidebar-title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.2rem;
+  color: #2d3436;
+  border-left: 5px solid #ffcb05;
+  padding-left: 12px;
+  margin-bottom: 20px;
 }
 
-.pokemon-card {
+.m-detail-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.m-detail-img {
+  max-width: 160px;
+  height: auto;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+}
+
+.p-pokemon-page__content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+  height: 100vh;
+  overflow: hidden; 
 }
 
-.pokemon-card img {
-  width: 96px;
-  height: 96px;
+.p-pokemon-page__title {
+  padding: 10px 25px 5px 25px;
+  font-size: 0.95rem;
 }
 
-.pokemon-card p {
-  text-transform: capitalize;
-  margin: 4px 0;
+.p-pokemon-page__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-template-rows: repeat(4, 20vh);
+  gap: 8px;
+  padding: 5px 25px 15px 25px;
+  align-content: start;
+  z-index: 1;
 }
-.pokemon-types {
+
+.stats-container {
+  margin-top: 15px;
+}
+
+.stat-row {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
-.pokemon-types span {
-  font-size: 12px;
-  text-transform: capitalize;
+.stat-label {
+  width: 70px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #636e72;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #dfe6e9;
+  border-radius: 4px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #3a86ff;
+  border-radius: 4px;
+}
+
+.m-pagination {
+  padding: 40px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+  box-sizing: border-box;
+  z-index: 10;
+  margin-top: auto;
+}
+
+.m-pagination__btn {
+  background: #3a86ff; 
+  color: white;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 6px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.m-pagination__btn:hover:not(:disabled) {
+  background: #d9e43e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(58, 134, 255, 0.3);
+}
+
+.m-pagination__btn:disabled {
+  background: #dfe6e9;
+  color: #b2bec3;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.m-pagination__info {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2d3436;
+  font-family: 'Montserrat', sans-serif;
 }

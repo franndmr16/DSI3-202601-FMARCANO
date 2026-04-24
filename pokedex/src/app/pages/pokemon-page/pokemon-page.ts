@@ -1,22 +1,68 @@
-import { Component, inject } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { PokemonDto } from '../../models/pokemon.dto';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { PokemonService } from '../../services/pokemon';
+import { PokemonDto } from '../../models/pokemon.dto';
+import { PokemonCardComponent } from '../../components/molecules/pokemon-card/pokemon-card';
 
 @Component({
   selector: 'app-pokemon-page',
-  imports: [NgFor],
+  standalone: true,
+  imports: [CommonModule, FormsModule, PokemonCardComponent],
   templateUrl: './pokemon-page.html',
   styleUrl: './pokemon-page.css'
 })
-export class PokemonPage {
+export class PokemonPage implements OnInit {
   linksPokemon: PokemonDto[] = [];
-  private pokemonService = inject(PokemonService);
+  selectedPokemon: PokemonDto | null = null;
+  searchTerm: string = ''; 
+  offset: number = 0;
+  limit: number = 20;
 
-  constructor() {
-    this.pokemonService.getPokemons().subscribe(result => {
-      this.linksPokemon = result;
-      console.log('Pokémons cargados:', this.linksPokemon);
-    });
+  private pokemonService = inject(PokemonService);
+  private cdr = inject(ChangeDetectorRef);
+
+  ngOnInit(): void {
+    this.loadPokemons();
+  }
+
+ loadPokemons(): void {
+  this.pokemonService.getPokemons(this.offset, this.limit).subscribe({
+    next: (result) => {
+      this.linksPokemon = [...result];
+      setTimeout(() => {
+        this.cdr.markForCheck();
+        this.cdr.detectChanges();
+      }, 0);
+    },
+    error: (err) => console.error('Error:', err)
+  });
+}
+
+  nextPage(): void {
+    this.offset += this.limit;
+    this.searchTerm = ''; 
+    this.loadPokemons();
+  }
+
+  prevPage(): void {
+    if (this.offset > 0) {
+      this.offset -= this.limit;
+      this.searchTerm = '';
+      this.loadPokemons();
+    }
+  }
+
+  get filteredPokemon() {
+    if (!this.searchTerm) return this.linksPokemon;
+    
+    return this.linksPokemon.filter(p => 
+      p.name.toLowerCase().includes(this.searchTerm.toLowerCase()) || 
+      p.id.toString() === this.searchTerm
+    );
+  }
+
+  selectPokemon(pokemon: PokemonDto): void {
+    this.selectedPokemon = pokemon;
   }
 }

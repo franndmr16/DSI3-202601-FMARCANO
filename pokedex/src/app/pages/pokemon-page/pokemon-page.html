@@ -1,13 +1,71 @@
-div class="layout">
-  <div class="sidebar">
-  </div>
-  <div class="pokemon-grid">
-    <div class="pokemon-card" *ngFor="let pokemon of linksPokemon">
-      <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />
-      <p class="pokemon-name">{{ pokemon.name }}</p>
-      <div class="pokemon-types">
-        <span *ngFor="let t of pokemon.types">{{ t.type.name }}</span>
-      </div>
+<div class="p-pokemon-page__container">
+  
+  <aside class="p-pokemon-page__sidebar">
+    <h1 class="sidebar-title">POKEMON DETALLE</h1>
+
+    <div class="m-search-container">
+      <input type="text" 
+             placeholder="Busca por nombre o ID..." 
+             [(ngModel)]="searchTerm" 
+             class="m-search-input">
+      <button class="m-search-button">BUSCAR</button>
     </div>
-  </div>
+
+    @if (selectedPokemon) {
+      <div class="m-detail-content">
+        <div class="m-detail-img-wrapper">
+          <img [src]="selectedPokemon.sprites.other['official-artwork'].front_default || ''" 
+               class="m-detail-img">
+        </div>
+        
+        <h2 class="m-detail-name">
+          {{ selectedPokemon.name | titlecase }} #{{ selectedPokemon.id | number:'3.0' }}
+        </h2>
+        
+        <div class="stats-container">
+          <h3 class="stats-title">ESTADISTICAS BASE</h3>
+          @for (s of selectedPokemon.stats; track s.stat.name) {
+            <div class="stat-row">
+              <span class="stat-label">{{ s.stat.name | uppercase }}</span>
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width.%]="(s.base_stat / 2.5)"></div>
+              </div>
+              <span class="stat-value">{{ s.base_stat }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    } @else {
+      <div class="m-detail-placeholder">
+        <p>Selecciona un Pokémon para ver su ficha técnica.</p>
+      </div>
+    }
+  </aside>
+
+  <main class="p-pokemon-page__content">
+    <h2 class="p-pokemon-page__title">GALERÍA DE EXPLORACIÓN</h2>
+
+    <div class="p-pokemon-page__grid">
+      @for (pokemon of filteredPokemon; track pokemon.id) {
+        <app-pokemon-card 
+          [id]="pokemon.id"
+          [name]="pokemon.name"
+          [image]="pokemon.sprites.other['official-artwork'].front_default || ''"
+          [types]="pokemon.types"
+          (click)="selectPokemon(pokemon)">
+        </app-pokemon-card>
+      }
+    </div>
+
+    <div class="m-pagination">
+      <button class="m-pagination__btn" 
+              (click)="prevPage()" 
+              [disabled]="offset === 0">◀ ANTERIOR</button>
+              
+      <span class="m-pagination__info">PÁGINA {{ (offset / limit) + 1 }}</span>
+      
+      <button class="m-pagination__btn" 
+              (click)="nextPage()">SIGUIENTE ▶</button>
+    </div>
+  </main>
 </div>
