@@ -1,0 +1,10 @@
+<div class="m-pokemon-card" (click)="onCardClick()">
+  <span class="m-pokemon-card__id">#{{ id | number:'3.0' }}</span>
+  <img [src]="image" [alt]="name" class="m-pokemon-card__image">
+  <h3 class="m-pokemon-card__name">{{ name | titlecase }}</h3>
+  <div class="m-pokemon-card__types">
+    @for (t of types; track t.type.name) {
+      <app-type-badge [type]="t.type.name"></app-type-badge>
+    }
+  </div>
+</div>
