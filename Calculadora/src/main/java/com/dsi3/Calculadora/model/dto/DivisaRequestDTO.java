@@ -7,12 +7,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
-
-public class CalculadoraResponseDTO {
-
-  private Double result;
+public class DivisaRequestDTO {
+    private String divisa;
+    private double valor;
 
 }
