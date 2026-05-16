@@ -1,10 +1,10 @@
-package com.dsi3.api_usuarios;
+package com.dsi3.API_USUARIO;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiUsuariosApplicationTests {
+class ApiUsuarioApplicationTests {
 
 	@Test
 	void contextLoads() {
