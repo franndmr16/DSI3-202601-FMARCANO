@@ -1,0 +1,36 @@
+.tables-grid {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 160, 100, 0.1);
+}
+
+.tables-grid__title {
+  color: #c4a064;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.table-card {
+  background: #0f172a;
+  border: 1px solid #c4a064;
+  padding: 20px;
+  text-align: center;
+  color: #f0e6c8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.table-card:hover {
+  background: #c4a064;
+  color: #0f172a;
+  font-weight: bold;
+}

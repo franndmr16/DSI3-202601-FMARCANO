@@ -1,0 +1,30 @@
+.login-form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5rem;
+}
+
+.login-form__server-error {
+  font-size: 13px;
+  color: #e24b4a;
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+}
+
+.login-form__footer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(240, 230, 200, 0.55);
+  text-align: center;
+  margin: 0.25rem 0 0;
+}
+
+.login-form__link { 
+  color: #c4a064;
+  text-decoration: underline; 
+  text-underline-offset: 3px;
+}
+
+.login-form__link:hover { 
+  color: #f0e6c8; 
+}

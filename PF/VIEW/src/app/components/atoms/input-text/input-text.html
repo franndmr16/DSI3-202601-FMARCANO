@@ -1,0 +1,9 @@
+<input
+  [type]="type"
+  [placeholder]="placeholder"
+  [value]="value"
+  [class.input--error]="hasError"
+  class="input"
+  (input)="onInput($event)"
+  (blur)="onBlur()"
+/>

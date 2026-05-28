@@ -1,0 +1,33 @@
+<form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+
+  <app-form-field
+    label="Correo electrónico"
+    type="email"
+    placeholder="correo@ejemplo.com"
+    [control]="emailCtrl"
+    errorMessage="Ingresa un correo válido"
+  />
+
+  <app-form-field
+    label="Contraseña"
+    type="password"
+    placeholder="mínimo 6 caracteres"
+    [control]="passCtrl"
+    errorMessage="Mínimo 6 caracteres"
+  />
+
+  <p *ngIf="errorServer" class="login-form__server-error">{{ errorServer }}</p>
+
+  <app-button
+    label="Iniciar sesión"
+    type="submit"
+    variant="primary"
+    [loading]="loading"
+  />
+
+  <p class="login-form__footer">
+    ¿No tienes cuenta?
+    <a routerLink="/registro" class="login-form__link">Regístrate aquí</a>
+  </p>
+
+</form>

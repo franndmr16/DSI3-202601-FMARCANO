@@ -1,0 +1,23 @@
+<div class="clients-grid">
+  <div class="client-card" *ngFor="let client of clients">
+    <div class="client-header">
+      <div class="avatar">{{ client.nombre.substring(0,2).toUpperCase() }}</div>
+      <div class="client-info">
+        <h4>{{ client.nombre }}</h4>
+        <p>{{ client.email }}</p>
+      </div>
+    </div>
+    
+    <p class="phone-number">{{ client.telefono }}</p>
+    
+    <div class="points-section">
+      <small>PUNTOS ACUMULADOS</small>
+      <h3>{{ client.puntos || 0 }}</h3>
+    </div>
+    
+    <div class="card-actions">
+      <button class="btn-edit" (click)="editClient(client)">EDITAR</button>
+      <button class="btn-delete" (click)="deleteClient(client)">ELIMINAR</button>
+    </div>
+  </div>
+</div>

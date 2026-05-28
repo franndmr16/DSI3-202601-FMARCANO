@@ -1,0 +1,61 @@
+<div class="dashboard-page">
+  <aside class="dashboard-page__sidebar">
+    <app-sidebar-nav></app-sidebar-nav>
+  </aside>
+
+  <main class="dashboard-page__main">
+    <header class="page-header">
+      <div>
+        <h1>Productos</h1>
+        <p>MesaYa / Productos</p>
+      </div>
+      <button class="btn-new" (click)="abrirModal()">+ NUEVO PRODUCTO</button>
+    </header>
+
+    <input type="text" class="search-bar" placeholder="Buscar por nombre o categoría...">
+
+    <app-product-grid [productos]="productos"></app-product-grid>
+  </main>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <h3>Nuevo Producto</h3>
+    <form [formGroup]="productoForm" (ngSubmit)="guardarProducto()">
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <input formControlName="nombre" placeholder="Ej: Lomo Saltado" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Descripción</label>
+        <input formControlName="descripcion" placeholder="Descripción opcional" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Precio</label>
+        <input formControlName="precio" placeholder="Ej: 15.90" type="number" step="0.01">
+      </div>
+
+      <div class="form-group">
+        <label>Categoría</label>
+        <input formControlName="categoria" placeholder="Ej: Platos principales" type="text">
+      </div>
+
+      <div class="form-group form-group--checkbox">
+        <label>
+          <input formControlName="disponible" type="checkbox">
+          Disponible
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="cerrarModal()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="productoForm.invalid">Guardar</button>
+      </div>
+
+    </form>
+  </div>
+</div>

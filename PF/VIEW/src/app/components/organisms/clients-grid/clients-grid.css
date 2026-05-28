@@ -1,0 +1,55 @@
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.client-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+}
+
+.client-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  background-color: #c4a064;
+  color: #0f172a;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.points-section {
+  background: #0f172a;
+  padding: 10px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit { background: #c4a064; color: #0f172a; font-weight: bold; }
+.btn-delete { background: #334155; color: #ffffff; }

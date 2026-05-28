@@ -1,0 +1,26 @@
+<div class="product-grid">
+  <div *ngIf="!productos || productos.length === 0" style="padding: 20px; text-align: center;">
+    No hay productos para mostrar.
+  </div>
+
+  <div class="product-card" *ngFor="let p of productos">
+    <div class="product-card__image">Imagen</div>
+
+    <h4 class="product-card__name">{{ p.nombre }}</h4>
+
+    <div class="product-card__tags">
+      <span>{{ p.categoria }}</span>
+      <span [class.status-active]="p.disponible === true"
+            [class.status-inactive]="p.disponible === false">
+        {{ p.disponible ? 'ACTIVO' : 'INACTIVO' }}
+      </span>
+    </div>
+
+    <p class="product-card__price">${{ p.precio }}</p>
+
+    <div class="product-card__actions">
+      <button class="btn-edit">EDITAR</button>
+      <button class="btn-delete">ELIMINAR</button>
+    </div>
+  </div>
+</div>

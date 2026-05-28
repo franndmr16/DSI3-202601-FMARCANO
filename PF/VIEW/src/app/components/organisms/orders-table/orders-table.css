@@ -1,0 +1,31 @@
+.orders-table {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 160, 100, 0.1);
+}
+
+.orders-table__title {
+  color: #c4a064;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #f0e6c8;
+  font-size: 14px;
+}
+
+td {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(196, 160, 100, 0.05);
+}
+
+.status {
+  color: #c4a064;
+  font-weight: 500;
+  text-align: right;
+}
