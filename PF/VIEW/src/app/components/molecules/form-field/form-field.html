@@ -1,0 +1,10 @@
+<div class="field">
+  <label class="field__label">{{ label }}</label>
+  <app-input-text
+    [type]="type"
+    [placeholder]="placeholder"
+    [hasError]="hasError"
+    [formControl]="control"
+  />
+  <span *ngIf="hasError" class="field__error">{{ errorMessage }}</span>
+</div>

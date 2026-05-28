@@ -8,21 +8,35 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins = "*")
 public class ProductoController {
 
     @Autowired
     private IProductoService productoService;
 
     @GetMapping
-    public ResponseEntity<List<ProductoDTO>> listarProductos(@RequestParam(required = false) String categoria) {
+    public ResponseEntity<List<ProductoDTO>> listarProductos(
+            @RequestParam(required = false) String categoria,
+            @RequestParam(required = false) Boolean disponible) {
+        
+        List<ProductoDTO> productos = productoService.listarTodos();
+
         if (categoria != null && !categoria.trim().isEmpty()) {
-            return new ResponseEntity<>(productoService.filtrarPorCategoriaYDisponibilidad(categoria, true), HttpStatus.OK);
+            productos = productos.stream()
+                    .filter(p -> p.getCategoria().equalsIgnoreCase(categoria))
+                    .collect(Collectors.toList());
         }
-        return new ResponseEntity<>(productoService.listarTodos(), HttpStatus.OK);
+        
+        if (disponible != null) {
+            productos = productos.stream()
+                    .filter(p -> p.isDisponible() == disponible)
+                    .collect(Collectors.toList());
+        }
+
+        return new ResponseEntity<>(productos, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

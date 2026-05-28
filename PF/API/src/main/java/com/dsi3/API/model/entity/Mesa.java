@@ -1,5 +1,6 @@
 package com.dsi3.API.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -21,12 +22,17 @@ public class Mesa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_mesa")
     private Long idMesa;
 
+    @Column(name = "numero_mesa", nullable = false)
     private Integer numeroMesa;
+
+    @Column(name = "capacidad", nullable = false)
     private Integer capacidad;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "estado", nullable = false, length = 20)
     private EstadoMesa estado;
 
     public enum EstadoMesa {

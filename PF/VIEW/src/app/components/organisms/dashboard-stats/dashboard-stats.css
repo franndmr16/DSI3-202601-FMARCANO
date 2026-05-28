@@ -1,0 +1,22 @@
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); gap: 20px; 
+}
+.stat-card { 
+    background: rgba(255, 255, 255, 0.03); 
+    border-bottom: 2px solid #c4a064; 
+    padding: 25px; 
+    border-radius: 8px; 
+    text-align: center; 
+}
+.stat-card__value { 
+    font-size: 36px; 
+    color: #f0e6c8; 
+    margin: 10px 0 0; 
+}
+.stat-card__label { 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    color: #c4a064; 
+    letter-spacing: 1px; 
+}

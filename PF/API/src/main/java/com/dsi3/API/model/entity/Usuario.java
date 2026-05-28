@@ -16,15 +16,15 @@ public class Usuario {
     @Column(name = "id_usuario")
     private Long idUsuario;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(name = "username", nullable = false, unique = true, length = 50)
     private String username;
     
-    @Column(nullable = false, length = 32)
+    @Column(name = "password", nullable = false, length = 32)
     private String password;
 
-    @Column(nullable = false, length = 30)
+    @Column(name = "rol", nullable = false, length = 30)
     private String rol;
 }

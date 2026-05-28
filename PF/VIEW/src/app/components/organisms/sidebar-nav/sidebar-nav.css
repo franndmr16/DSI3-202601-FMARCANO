@@ -1,0 +1,32 @@
+.sidebar {
+  background-color: #0f172a;
+  color: white;
+  height: 20vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__logo { margin-bottom: 40px; color: #c4a064; }
+
+.sidebar__menu {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.sidebar__menu li {
+  padding: 15px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar__menu li.active {
+  color: #c4a064;
+  border-left: 3px solid #c4a064;
+  padding-left: 10px;
+}
+
+.sidebar__menu li:hover { color: #c4a064; }
+
+.sidebar__footer { margin-top: auto; border-top: 1px solid #333; padding-top: 20px; }

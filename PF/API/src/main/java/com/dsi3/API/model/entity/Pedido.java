@@ -43,6 +43,9 @@ public class Pedido {
     @Column(name = "observaciones", columnDefinition = "TEXT")
     private String observaciones;
 
+    @Column(name = "total", nullable = false)
+    private Double total = 0.0;
+
     @OneToMany(
         mappedBy = "pedido",
         cascade = CascadeType.ALL,

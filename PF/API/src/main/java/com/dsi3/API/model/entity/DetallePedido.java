@@ -24,12 +24,12 @@ public class DetallePedido {
     @JoinColumn(name = "id_producto", nullable = false)
     private Producto producto;
 
-    @Column(nullable = false)
+    @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
 
     @Column(name = "precio_unitario", nullable = false)
     private Double precioUnitario;
 
-    @Column(nullable = false)
+    @Column(name = "subtotal", nullable = false)
     private Double subtotal;
 }

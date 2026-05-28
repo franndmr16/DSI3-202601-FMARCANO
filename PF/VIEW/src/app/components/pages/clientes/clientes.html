@@ -1,0 +1,19 @@
+<div class="dashboard-page">
+  <aside class="dashboard-page__sidebar">
+    <app-sidebar-nav></app-sidebar-nav>
+  </aside>
+
+  <main class="dashboard-page__main">
+    <header class="page-header">
+      <div>
+        <h1>Clientes</h1>
+        <p>MesaYa / Clientes</p>
+      </div>
+      <button class="btn-new">+ NUEVO CLIENTE</button>
+    </header>
+
+    <input type="text" class="search-bar" placeholder="Buscar por nombre o correo...">
+
+    <app-clients-grid [clients]="clientes"></app-clients-grid>
+  </main>
+</div>

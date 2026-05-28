@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+.login-page {
+  min-height: 100vh;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page__card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(196, 160, 100, 0.25);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  animation: cardIn 0.5s ease-out both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Esquinas decorativas */
+.login-page__corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: rgba(196, 160, 100, 0.4);
+}
+.login-page__corner.tl { top: 12px; left: 12px; border-top: 1px solid; border-left: 1px solid; }
+.login-page__corner.tr { top: 12px; right: 12px; border-top: 1px solid; border-right: 1px solid; }
+.login-page__corner.bl { bottom: 12px; left: 12px; border-bottom: 1px solid; border-left: 1px solid; }
+.login-page__corner.br { bottom: 12px; right: 12px; border-bottom: 1px solid; border-right: 1px solid; }
+
+/* Brand */
+.login-page__brand { text-align: center; margin-bottom: 1.5rem; }
+.login-page__logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #f0e6c8;
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
+}
+.login-page__logo span { color: #c4a064; }
+.login-page__tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: rgba(196, 160, 100, 0.5);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.login-page__divider {
+  width: 40px; height: 1px;
+  background: rgba(196, 160, 100, 0.3);
+  margin: 1rem auto 0;
+}

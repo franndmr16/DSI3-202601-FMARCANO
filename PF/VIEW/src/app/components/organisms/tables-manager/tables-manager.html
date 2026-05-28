@@ -1,0 +1,21 @@
+<div class="tables-grid">
+  <div *ngIf="!tables || tables.length === 0" style="padding: 20px; border: 2px dashed red; text-align: center;">
+    No hay mesas para mostrar (El array está vacío o cargando).
+  </div>
+
+  <ng-container *ngIf="tables && tables.length > 0">
+    <div class="table-card" *ngFor="let t of tables">
+      <h3 class="table-number">Mesa #{{ t.numeroMesa || '?' }}</h3> 
+      
+      <p class="table-capacity">Capacidad: {{ t.capacidad || 0 }}</p>
+      
+      <div class="table-status" [class.occupied]="t.estado === 'OCUPADA'">
+      </div>
+
+      <div class="table-actions">
+        <button class="btn-edit" type="button">EDITAR</button>
+        <button class="btn-delete" type="button">ELIMINAR</button>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,50 @@
+<form class="register-form" (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+
+  <app-form-field
+    label="Nombre completo"
+    type="text"
+    placeholder="Franklin Marcano"
+    [control]="fullNameCtrl"
+    errorMessage="Ingresa tu nombre completo"
+  />
+
+  <app-form-field
+    label="Correo electrónico"
+    type="email"
+    placeholder="micorreoejemplo@ejemplo.com"
+    [control]="emailCtrl"
+    errorMessage="Ingresa un correo válido"
+  />
+
+  <app-form-row>
+    <app-form-field
+      label="Contraseña"
+      type="password"
+      placeholder="mínimo 6 caracteres"
+      [control]="passCtrl"
+      errorMessage="Mínimo 6 caracteres"
+    />
+    <app-form-field
+      label="Confirmar"
+      type="password"
+      placeholder="repetir"
+      [control]="confirmPassCtrl"
+      [errorMessage]="passwordMismatch ? 'Las contraseñas no coinciden' : 'Campo requerido'"
+    />
+  </app-form-row>
+
+  <p *ngIf="errorServer" class="register-form__server-error">{{ errorServer }}</p>
+
+  <app-button
+    label="Crear cuenta"
+    type="submit"
+    variant="primary"
+    [loading]="loading"
+  />
+
+  <p class="register-form__footer">
+    ¿Ya tienes cuenta?
+    <a routerLink="/login" class="register-form__link">Inicia sesión</a>
+  </p>
+
+</form>

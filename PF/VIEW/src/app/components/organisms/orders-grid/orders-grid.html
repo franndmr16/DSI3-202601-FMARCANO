@@ -1,0 +1,29 @@
+<div class="orders-grid">
+  <div class="order-card" *ngFor="let order of orders">
+    <div class="order-header">
+      <div>
+        <h4>Pedido #{{ order.id }}</h4>
+        <small>{{ order.table }} · {{ order.client }}</small>
+      </div>
+      <span class="status-badge">{{ order.status }}</span>
+    </div>
+
+    <div class="order-items">
+      <div class="item" *ngFor="let item of order.items">
+        <span>{{ item.name }} x{{ item.qty }}</span>
+        <span>${{ item.price | number }}</span>
+      </div>
+    </div>
+
+    <div class="order-total">
+      <span>Total</span>
+      <strong>${{ order.total | number }}</strong>
+    </div>
+
+    <button class="btn-main-action">{{ order.nextAction }}</button>
+    <div class="secondary-actions">
+      <button class="btn-secondary">VER DETALLE</button>
+      <button class="btn-delete">ELIM.</button>
+    </div>
+  </div>
+</div>

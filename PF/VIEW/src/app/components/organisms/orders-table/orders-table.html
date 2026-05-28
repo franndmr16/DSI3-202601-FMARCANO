@@ -1,0 +1,11 @@
+<div class="orders-table">
+  <h3 class="orders-table__title">Pedidos Recientes</h3>
+  <table>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.mesa }}</td>
+      <td>{{ order.total }}</td>
+      <td class="status">{{ order.status }}</td>
+    </tr>
+  </table>
+</div>

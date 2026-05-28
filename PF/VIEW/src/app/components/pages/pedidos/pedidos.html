@@ -1,0 +1,24 @@
+<div class="dashboard-page">
+  
+  <aside class="dashboard-page__sidebar">
+    <app-sidebar-nav></app-sidebar-nav>
+  </aside>
+
+  <main class="dashboard-page__main">
+    <header class="page-header">
+      <h1>Pedidos</h1>
+      <button class="btn-new">+ NUEVO PEDIDO</button>
+    </header>
+
+    <div class="table-filters">
+  <button class="filter-btn active">Todos (18)</button>
+  <button class="filter-btn">Creada (4)</button>
+  <button class="filter-btn">En preparación (6)</button>
+  <button class="filter-btn">Entregada (3)</button>
+  <button class="filter-btn">Facturada (5)</button>
+</div>
+
+    <app-orders-grid></app-orders-grid>
+  </main>
+
+</div>

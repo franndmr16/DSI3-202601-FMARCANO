@@ -19,7 +19,9 @@ public class MesaService implements IMesaService {
 
     @Override
     public List<MesaDTO> listarTodas() {
-        return mesaRepository.findAll().stream().map(mesa -> {
+    return mesaRepository.findAll().stream()
+        .filter(mesa -> mesa != null)
+        .map(mesa -> {
             MesaDTO dto = new MesaDTO();
             dto.setIdMesa(mesa.getIdMesa());
             dto.setNumeroMesa(mesa.getNumeroMesa());
@@ -27,7 +29,7 @@ public class MesaService implements IMesaService {
             dto.setEstado(mesa.getEstado());
             return dto;
         }).collect(Collectors.toList());
-    }
+}
 
     @Override
     public MesaDTO buscarPorId(Long id) {
